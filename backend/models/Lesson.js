@@ -1,0 +1,3 @@
+import mongoose from "mongoose";
+const schema=new mongoose.Schema({topicId:{type:mongoose.Schema.Types.ObjectId,ref:"Topic",required:true},documentId:{type:mongoose.Schema.Types.ObjectId,ref:"Document",required:true},title:String,introduction:String,explanation:String,realLifeExample:String,importantPoints:[String],examPoints:[String],summary:String,difficulty:String,quiz:Array,audioUrl:String,videoUrl:String},{timestamps:true});
+export default mongoose.models.Lesson || mongoose.model("Lesson",schema);
