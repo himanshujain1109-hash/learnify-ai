@@ -1,2 +1,0 @@
-import { Link } from 'react-router-dom';
-export default function MaterialCard({material}) { return <article className="material-card"><div className="file-icon">PDF</div><div className="material-body"><span className="badge">{material.status||'Ready'}</span><h3>{material.title}</h3><p>{material.originalFileName}</p><Link className="btn secondary" to={`/materials/${material._id}`}>Open material →</Link></div></article>; }
