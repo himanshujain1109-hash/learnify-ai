@@ -1,10 +1,11 @@
 {
-  "name": "learnify-ai-backend",
+  "name": "learnify-ai",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/server.js",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build"
   },
   "dependencies": {
     "@google/genai": "^1.14.0",
