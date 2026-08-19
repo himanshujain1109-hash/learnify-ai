@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import User from "../../backend/models/User.js";
 import connectDB from "../../backend/lib/db.js";
+import { signToken } from "../../backend/lib/auth.js";
 import { sendError, setCors } from "../_utils.js";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,6 +40,7 @@ export default async function handler(req,res) {
       throw dbErr;
     }
 
-    return res.status(201).json({message:"Registration successful",user:{id:user._id,name:user.name,email:user.email}});
+    const token=signToken(user._id.toString());
+    return res.status(201).json({message:"Registration successful",token,user:{id:user._id,name:user.name,email:user.email}});
   } catch(e){return sendError(res,e);}
 }
