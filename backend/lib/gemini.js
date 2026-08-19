@@ -5,7 +5,7 @@ function client() {
   return new GoogleGenAI({ apiKey:process.env.GEMINI_API_KEY });
 }
 
-const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
 
 export async function generateJSON(prompt) {
   const ai=client();
