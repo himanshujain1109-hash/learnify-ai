@@ -133,3 +133,11 @@ def get_video(job_id: str):
         media_type="video/mp4",
         filename=f"learnify-{job_id}.mp4",
     )
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "Learnify Notes-to-Video",
+        "message": "Python video service is running",
+        "health": "/health"
+    }
