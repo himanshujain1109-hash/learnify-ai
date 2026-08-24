@@ -1,7 +1,7 @@
 import api from "./api";
 
 export const generateLesson = async (topicId) => {
-  const response = await api.post("/api/lessons/generate", {
+  const response = await api.post("/lessons/generate", {
     topicId,
   });
 
@@ -9,7 +9,6 @@ export const generateLesson = async (topicId) => {
 };
 
 export const getLesson = async (id) => {
-  const response = await api.get(`/api/lessons/${id}`);
-
+  const response = await api.get(`/lessons/${id}`);
   return response.data;
 };
