@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-pptx
+PyMuPDF
+anthropic
+edge-tts
+moviepy==1.0.3
+pillow
+imageio-ffmpeg
