@@ -1,14 +1,12 @@
 import api from "./api";
 
 export const getMaterials = async () => {
-  const response = await api.get("/api/materials");
-
+  const response = await api.get("/materials");
   return response.data;
 };
 
 export const getMaterial = async (id) => {
-  const response = await api.get(`/api/materials/${id}`);
-
+  const response = await api.get(`/materials/${id}`);
   return response.data;
 };
 
@@ -21,7 +19,7 @@ export const uploadMaterial = async (file, title) => {
     form.append("title", title);
   }
 
-  const response = await api.post("/api/materials/upload", form, {
+  const response = await api.post("/materials/upload", form, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
