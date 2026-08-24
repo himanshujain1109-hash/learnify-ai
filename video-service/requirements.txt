@@ -3,7 +3,7 @@ uvicorn[standard]
 python-multipart
 python-pptx
 PyMuPDF
-anthropic
+google-genai
 edge-tts
 moviepy==1.0.3
 pillow
